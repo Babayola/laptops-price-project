@@ -1,0 +1,34 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python preprocess.py
+    deps:
+    - path: data/raw-data.csv
+      hash: md5
+      md5: 2656100d5cc8d07a11e5cd3c1811d645
+      size: 49896
+    outs:
+    - path: data/clean.csv
+      hash: md5
+      md5: 1577eace5e0c4489d4634c0f503b0a49
+      size: 53575
+  train:
+    cmd: python train_script.py
+    deps:
+    - path: data/clean.csv
+      hash: md5
+      md5: 1577eace5e0c4489d4634c0f503b0a49
+      size: 53575
+    - path: train_script.py
+      hash: md5
+      md5: ff74c1a5b7ee20f5bf7c6ba243beabba
+      size: 1124
+    outs:
+    - path: feature_columns.json
+      hash: md5
+      md5: 0138a0af877e737ae948948e365fed92
+      size: 191
+    - path: laptop_price_predictor.pkl
+      hash: md5
+      md5: cdce2859093ad07a8ed9cb2899fd37ae
+      size: 7729
