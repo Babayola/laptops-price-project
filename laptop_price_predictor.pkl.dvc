@@ -1,5 +1,0 @@
-outs:
-- md5: 700a1af703137ac68132dc2a624e95a0
-  size: 2011402
-  hash: md5
-  path: laptop_price_predictor.pkl
