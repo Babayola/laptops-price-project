@@ -21,8 +21,8 @@ stages:
       size: 53575
     - path: train_script.py
       hash: md5
-      md5: ff74c1a5b7ee20f5bf7c6ba243beabba
-      size: 1124
+      md5: 536150fe975ade0cab40ef25d263e142
+      size: 1267
     outs:
     - path: feature_columns.json
       hash: md5
@@ -30,5 +30,5 @@ stages:
       size: 191
     - path: laptop_price_predictor.pkl
       hash: md5
-      md5: cdce2859093ad07a8ed9cb2899fd37ae
+      md5: 551f6b813d73c2856164e8e4e98bd224
       size: 7729
