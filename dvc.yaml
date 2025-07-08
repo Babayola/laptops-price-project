@@ -2,16 +2,23 @@ stages:
   train:
     cmd: python train_script.py
     deps:
-    - data/clean.csv
-    - train_script.py
+      - data/clean.csv
+      - train_script.py
     outs:
-    - feature_columns.json
-    - laptop_price_predictor.pkl
+      - feature_columns.json
+      - laptop_price_predictor.pkl
+
   preprocess:
     cmd: python preprocess.py
     deps:
-    - data/raw-data.csv
+      - data/raw-data.csv
     outs:
-    - data/clean.csv
+      - data/clean.csv
+
   deploy:
-    cmd: \
+    cmd: python src/deploy.py --model models/model_v1.pkl
+    deps:
+      - src/deploy.py
+      - models/model_v1.pkl
+    outs:
+      - predictions.csv
