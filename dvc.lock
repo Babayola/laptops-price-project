@@ -32,3 +32,19 @@ stages:
       hash: md5
       md5: 551f6b813d73c2856164e8e4e98bd224
       size: 7729
+  deploy:
+    cmd: python src/deploy.py --model models/model_v1.pkl
+    deps:
+    - path: models/model_v1.pkl
+      hash: md5
+      md5: 551f6b813d73c2856164e8e4e98bd224
+      size: 7729
+    - path: src/deploy.py
+      hash: md5
+      md5: e53ed1ebca25d4c95bb8695a6729c06e
+      size: 680
+    outs:
+    - path: predictions.csv
+      hash: md5
+      md5: e9eb5f3eb308ef3b2b62a9c76f4e497d
+      size: 6293
