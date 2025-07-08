@@ -16,7 +16,7 @@ X = df.drop(columns=["Price"])
 y = df["Price"]
 
 # Identify numerical and categorical columns
-numerical_features = ["RAM", "Storage", "Screen_Width", "Screen_Height"]
+numerical_features = ["RAM", "Screen_Width", "Screen_Height"]
 categorical_features = ["Manufacturer", "CPU", "GPU", "Operating System"]
 
 # Create preprocessing pipeline
@@ -38,3 +38,8 @@ pipeline.fit(X, y)
 joblib.dump(pipeline, "laptop_price_predictor.pkl")
 with open("feature_columns.json", "w") as f:
     json.dump(X.columns.tolist(), f)
+
+# Add check points for model version control
+import os
+os.makedirs("models", exist_ok=True)
+joblib.dump(pipeline, "models/model_v1.pkl")
