@@ -25,5 +25,5 @@ jobs:
 
       - name: Set up DVC and run pipeline
         run: |
-          dvc pull
-          dvc repro
+          dvc pull --force
+          dvc repro 
